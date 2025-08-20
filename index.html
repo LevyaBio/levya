@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Levya</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <img src="img/Logo_Levya-01.svg" alt="Levya Logo" class="logo">
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#solution">Our Solution</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#science">Our Science</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#partners">Partners</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="menu-toggle">☰</div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="video-container">
+      <video autoplay muted loop playsinline>
+        <source src="img/video_home.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="hero-overlay">
+        <h1>Reimagining fats and oils production</h1>
+      </div>
+    </div>
+    <div class="hero-text">
+      <p>
+        We produce sustainable fats and oils that deliver the exact same performance without social and environmental impact. Using wild, non-GMO yeasts and precision fermentation, we create ingredients ready for the food and cosmetics industry.
+      </p>
+    </div>
+  </section>
+
+  <!-- Our Solution -->
+  <section id="solution">
+    <h2>Sustainable fats, identical performance</h2>
+    <p>
+      Our yeasts produce fats that match cocoa butter’s unique fatty acid profile. This enables chocolate with the same snap and melt, and personal care products with the same smoothness and stability while lowering the water and carbon footprint of products.
+    </p>
+  </section>
+
+  <!-- Services -->
+  <section id="services">
+    <h2>From lab to your product</h2>
+    <p>
+      Levya helps integrate fermentation-derived fats and oils seamlessly into existing product lines.
+    </p>
+  </section>
+
+  <!-- Our Science -->
+  <section id="science" class="science-section">
+    <div class="science-content">
+      <div class="science-text">
+        <h2>Nature-powered precision fermentation</h2>
+        <p>
+          Our unique collection of 200+ wild yeast strains from diverse biomes gives us unmatched diversity to discover natural lipid profiles. By using low-cost and flexible feedstocks we are enabling scalable, low-cost production with minimal environmental impact.
+        </p>
+      </div>
+      <div class="science-image">
+        <img src="img/Corales_2.jpg" alt="Corales">
+      </div>
+    </div>
+  </section>
+
+  <!-- Team -->
+  <section id="team">
+    <h2>The science behind Levya</h2>
+    <div class="team-tabs">
+      <button class="tab-button active" onclick="showPanel('founders', this)">Founders</button>
+      <button class="tab-button" onclick="showPanel('advisors', this)">Advisors</button>
+    </div>
+
+    <!-- Founders -->
+    <div class="team-panel active" id="founders">
+      <div class="member-card">
+        <img src="img/magdalena.jpg" alt="Magdalena Chullmir">
+        <h3 class="member-name">Magdalena Chullmir</h3>
+        <span>CEO | Founder</span>
+        <a href="https://www.linkedin.com/in/magdalena-chullmir/" target="_blank" class="linkedin-icon">
+          <img src="img/linkedin.svg" alt="LinkedIn">
+        </a>
+      </div>
+      <div class="member-card">
+        <img src="img/mariana.jpg" alt="Mariana R. Lopes">
+        <h3 class="member-name">Mariana R. Lopes</h3>
+        <span>CSO | Founder</span>
+        <a href="https://www.linkedin.com/in/mariana-rocha-lopes-568853169/" target="_blank" class="linkedin-icon">
+          <img src="img/linkedin.svg" alt="LinkedIn">
+        </a>
+      </div>
+      <div class="member-card">
+        <img src="img/karen.jpg" alt="Karen Costa">
+        <h3 class="member-name">Karen Costa</h3>
+        <span>CTO | Founder</span>
+        <a href="https://www.linkedin.com/in/karen-costa-70409352/" target="_blank" class="linkedin-icon">
+          <img src="img/linkedin.svg" alt="LinkedIn">
+        </a>
+      </div>
+      <div class="member-card">
+        <img src="img/vitoria.jpg" alt="Vitória Petra">
+        <h3 class="member-name">Vitória Petra</h3>
+        <span>COO | Founder</span>
+        <a href="https://www.linkedin.com/in/vit%C3%B3ria-petra-46069a26a/" target="_blank" class="linkedin-icon">
+          <img src="img/linkedin.svg" alt="LinkedIn">
+        </a>
+      </div>
+    </div>
+
+    <!-- Advisors -->
+    <div class="team-panel" id="advisors">
+      <div class="member-card">
+        <img src="img/carlos.jpg" alt="Carlos Rosa">
+        <h3 class="member-name">Carlos Rosa</h3>
+        <span>Scientific Advisor</span>
+        <a href="https://www.linkedin.com/in/carlos-rosa-692135218/" target="_blank" class="linkedin-icon">
+          <img src="img/linkedin.svg" alt="LinkedIn">
+        </a>
+      </div>
+      <div class="member-card">
+        <img src="img/melissa.jpg" alt="Melissa F. Landel">
+        <h3 class="member-name">Melissa F. Landel</h3>
+        <span>Scientific Advisor</span>
+        <a href="https://www.linkedin.com/in/melissa-fontes-landell-953365379/" target="_blank" class="linkedin-icon">
+          <img src="img/linkedin.svg" alt="LinkedIn">
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Partners -->
+  <section id="partners">
+    <h2>Partners</h2>
+    <div class="partners-logos">
+      <img src="img/gridx.jpg" alt="GridX Partner">
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Let’s build the future of fats and oils together</h2>
+    <p>From strain to scale — collaborate with Levya.</p>
+    <form action="https://formspree.io/f/mblkvzkw" method="POST" class="contact-form">
+      <input type="text" name="name" placeholder="Full name" required>
+      <input type="text" name="company" placeholder="Company">
+      <input type="email" name="email" placeholder="Email" required>
+      <select name="type" required>
+        <option value="">I'm reaching out as a..</option>
+        <option value="Investor">Investor</option>
+        <option value="Partner">Partner</option>
+        <option value="Press">Press</option>
+        <option value="Final User">Final User</option>
+        <option value="Other">Other</option>
+      </select>
+      <textarea name="message" placeholder="Tell us what you need – Are you interested in investing, partnerships, or learning more about our technology?" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
