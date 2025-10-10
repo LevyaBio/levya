@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Levya</title>
-  <link rel="stylesheet" href="styles.css"/>
+  <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -21,25 +21,24 @@
         <li><a href="#partners">Partners</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+      <div class="menu-toggle">☰</div>
     </nav>
   </header>
 
   <!-- Hero Section -->
   <section id="home" class="hero">
     <div class="video-container">
-      <!-- Es una FOTO, no un video -->
-      <img src="img/cacao_tree.jpg" alt="Cacao tree" class="hero-image">
-
+      <video autoplay muted loop playsinline>
+        <source src="img/video_home.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
       <div class="hero-overlay">
         <h1>Reimagining fats and oils production</h1>
       </div>
     </div>
-
-    <!-- Texto del hero, posicionado sobre la imagen vía CSS -->
     <div class="hero-text">
       <p>
-        We produce sustainable fats and oils that deliver the exact same performance, while outperforming in functionalities like antioxidant power, without social and environmental impact. Using wild, non-GMO yeasts and precision fermentation, we create ingredients ready for the food and cosmetics industry.
+      We produce sustainable fats and oils that deliver the exact same performance, while outperforming in functionalities like antioxidant power, without social and environmental impact. Using wild, non-GMO yeasts and precision fermentation, we create ingredients ready for the food and cosmetics industry.
       </p>
     </div>
   </section>
@@ -48,7 +47,7 @@
   <section id="solution">
     <h2>Sustainable fats, identical performance</h2>
     <p>
-      Our yeasts produce fats that match cocoa butter, palm oil and shea butter's unique fatty acid profile. This enables food and personal care products to have the same smoothness and stability while lowering the water, land and carbon footprint.
+  Our yeasts produce fats that match cocoa butter, palm oil and shea butter's unique fatty acid profile. This enables food and personal care products to have the same smoothness and stability while lowering the water, land and carbon footprint.
     </p>
   </section>
 
@@ -66,7 +65,7 @@
       <div class="science-text">
         <h2>Nature-powered precision fermentation</h2>
         <p>
-          Our unique collection of 50.000+ wild yeast strains collected from diverse biomes around the world gives us unmatched diversity to discover natural lipid profiles. By using low-cost and flexible feedstocks we are enabling scalable, low-cost production with minimal environmental impact.
+        Our unique collection of 50.000+ wild yeast strains collected from diverse biomes around the world gives us unmatched diversity to discover natural lipid profiles. By using low-cost and flexible feedstocks we are enabling scalable, low-cost production with minimal environmental impact.
         </p>
       </div>
       <div class="science-image">
@@ -172,4 +171,3 @@
   <script src="script.js"></script>
 </body>
 </html>
-
