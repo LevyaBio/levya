@@ -26,7 +26,7 @@ header {
   padding: 1rem 2rem; 
 }
 .logo { 
-  height: 64px; 
+  height: 128px; 
 }
 .nav-links { 
   list-style: none; 
@@ -50,6 +50,11 @@ header {
   z-index: 1001; /* clave para que quede arriba del menú */
 }
 
+/* ===== NAVBAR ===== */
+.logo { 
+  height: 128px; /* antes 64px -> +100% en todas las versiones */
+}
+
 /* ===== HERO (titulo sobre imagen, texto debajo) ===== */
 .hero { 
   position: relative;
@@ -57,14 +62,14 @@ header {
   text-align: center;
   color: #667b68;
   background-color: #fff;
-  z-index: 0;                 /* asegura que el hero no flote sobre todo */
+  z-index: 0;
 }
 
 .hero-image-container {
   position: relative;
   width: 100%;
-  height: 80vh;
-  min-height: 480px;
+  height: 160vh; /* +200% de altura (antes 80vh) en web */
+  min-height: 960px;
   overflow: hidden;
   z-index: 0;
 }
@@ -75,10 +80,9 @@ header {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  pointer-events: none;       /* la imagen no bloquea clics al hacer scroll */
+  pointer-events: none;
 }
 
-/* overlay con el título sobre la imagen */
 .hero-overlay {
   position: absolute;
   inset: 0;
@@ -87,17 +91,16 @@ header {
   justify-content: center;
   background: rgba(0, 0, 0, 0.3);
   z-index: 1;
-  pointer-events: none;       /* el overlay no intercepta clics */
+  pointer-events: none;
 }
 
 .hero-overlay h1 {
   color: #fff;
-  font-size: 3rem;
+  font-size: 3.5rem;
   font-weight: 700;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
   margin: 0;
   padding: 0 1rem;
-  /* Si querés poder seleccionar el título, activá eventos solo en el h1 */
   pointer-events: auto;
 }
 
@@ -115,21 +118,28 @@ header {
   margin: 0;
 }
 
-/* ===== Responsive ===== */
+/* ===== Responsive (MOBILE) ===== */
 @media (max-width: 768px) {
-  .hero-image-container { height: 60vh; min-height: 360px; }
-  .hero-overlay h1 { font-size: 2rem; padding: 0 1rem; }
-  .hero-text { margin: 1.5rem auto 2.5rem; }
-  .hero-text p { font-size: 1.1rem; }
+  /* imagen 50% más chica que el valor base */
+  .hero-image-container {
+    height: 40vh;   /* antes 80vh -> 50% más chica */
+    min-height: 240px;
+  }
+
+  .hero-overlay h1 { 
+    font-size: 2rem; 
+    padding: 0 1rem; 
+  }
+
+  .hero-text { 
+    margin: 1.5rem auto 2.5rem; 
+  }
+
+  .hero-text p { 
+    font-size: 1.1rem; 
+  }
 }
 
-
-/* ===== Responsive ===== */
-@media (max-width: 768px) {
-  .hero-image-container { height: 60vh; min-height: 360px; }
-  .hero-overlay h1 { font-size: 2rem; padding: 0 1rem; }
-  .hero-text p { font-size: 1.1rem; }
-}
 
 /* ===== SECCIONES ===== */
 section { 
