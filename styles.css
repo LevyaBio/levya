@@ -55,9 +55,10 @@ header {
   padding: 0;
   text-align: center;
   color: #667b68;
+  background-color: #fff;
 }
 
-/* Imagen principal */
+/* Contenedor de la imagen */
 .hero-image-container {
   position: relative;
   width: 100%;
@@ -74,7 +75,7 @@ header {
   object-fit: cover;
 }
 
-/* Overlay con el título */
+/* Overlay con el título sobre la imagen */
 .hero-overlay {
   position: absolute;
   inset: 0;
@@ -82,6 +83,7 @@ header {
   align-items: center;
   justify-content: center;
   background: rgba(0, 0, 0, 0.3);
+  z-index: 1;
 }
 
 .hero-overlay h1 {
@@ -96,7 +98,7 @@ header {
 /* Texto debajo de la imagen */
 .hero-text {
   max-width: 900px;
-  margin: 2rem auto;
+  margin: 2rem auto 3rem;
   padding: 0 1.25rem;
 }
 
@@ -106,6 +108,19 @@ header {
   color: #667b68;
   margin: 0;
 }
+
+/* ===== Ajustes RESPONSIVE ===== */
+@media (max-width: 768px) {
+  /* en móvil reducimos la altura y tamaño del título */
+  .hero-image-container { height: 60vh; min-height: 360px; }
+  .hero-overlay h1 { font-size: 2rem; padding: 0 1rem; }
+
+  .hero-text {
+    margin: 1.5rem auto 2.5rem;
+  }
+  .hero-text p { font-size: 1.1rem; }
+}
+
 
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
