@@ -49,14 +49,16 @@ header {
   position: relative; 
   z-index: 1001; /* clave para que quede arriba del menú */
 }
-
-/* ===== HERO (IMAGEN CACAO TREE) ===== */
+/* ===== HERO (titulo sobre imagen, texto debajo) ===== */
 .hero { 
-  position: relative; 
-  padding: 0; 
+  position: relative;
+  padding: 0;
+  text-align: center;
+  color: #667b68;
 }
 
-.video-container {
+/* Imagen principal */
+.hero-image-container {
   position: relative;
   width: 100%;
   height: 80vh;
@@ -72,53 +74,44 @@ header {
   object-fit: cover;
 }
 
-/* gradiente para legibilidad del texto */
-.video-container::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,.45) 100%);
-  z-index: 1;
-}
-
-/* overlay con el título */
+/* Overlay con el título */
 .hero-overlay {
   position: absolute;
   inset: 0;
-  z-index: 2;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
-  text-align: center;
-  padding: 2rem 1rem;
+  background: rgba(0, 0, 0, 0.3);
 }
 
 .hero-overlay h1 {
-  margin: 0 0 6rem;
+  color: #fff;
   font-size: 3rem;
   font-weight: 700;
-  color: #fff;
-  text-shadow: 0 2px 8px rgba(0,0,0,.35);
-}
-
-/* párrafo sobre la imagen */
-.hero .hero-text {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 1.5rem;
-  z-index: 3;
-  max-width: 900px;
-  padding: 0 1.25rem;
-  text-align: center;
-  color: #fff;
-}
-
-.hero .hero-text p {
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
   margin: 0;
-  font-size: 1.2rem;
+  padding: 0 1rem;
+}
+
+/* Texto debajo de la imagen */
+.hero-text {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1.25rem;
+}
+
+.hero-text p {
+  font-size: 1.25rem;
   line-height: 1.6;
-  text-shadow: 0 1px 4px rgba(0,0,0,.35);
+  color: #667b68;
+  margin: 0;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .hero-image-container { height: 60vh; min-height: 360px; }
+  .hero-overlay h1 { font-size: 2rem; padding: 0 1rem; }
+  .hero-text p { font-size: 1.1rem; }
 }
 
 /* ===== SECCIONES ===== */
