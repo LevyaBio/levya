@@ -1,130 +1,80 @@
-body {
-  margin: 0;
-  font-family: 'Source Sans 3', sans-serif;
-  color: #667b68;
-  background-color: #fff;
+/* ===== HERO (soporta foto o video) ===== */
+.hero { 
+  position: relative; 
+  padding: 0;
 }
 
-h1, h2, h3 {
-  color: #667b68;
-  margin-bottom: 1rem;
-}
-
-h1 { font-size: 3rem; }
-h2 { font-size: 2.8rem; font-weight: 700; }
-p { font-size: 1.5rem; line-height: 1.6; }
-
-/* Navbar */
-header { background: #fff; border-bottom: 1px solid #e9ebe8; }
-.navbar { display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; }
-.logo { height: 200px; }
-.nav-links { list-style: none; display: flex; gap: 1.5rem; }
-.nav-links li a { text-decoration: none; color: #667b68; font-weight: 600; }
-.menu-toggle { display: none; cursor: pointer; font-size: 1.8rem; }
-
-/* Hero */
-.hero-container {
+/* Contenedor del media (tu HTML usa .video-container) */
+.hero .video-container {
   position: relative;
   width: 100%;
-  height: 50vh;
+  height: 80vh;           /* subí a 100vh si querés full-screen */
+  min-height: 480px;
   overflow: hidden;
 }
-.hero-image {
+
+/* La foto o video ocupan todo */
+.hero .video-container img,
+.hero .video-container video {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.hero-overlay {
+
+/* Oscurecimiento suave para legibilidad */
+.hero .video-container::after {
+  content: "";
   position: absolute;
-  top: 50%;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,.45) 100%);
+  z-index: 1;
+}
+
+/* Título dentro del overlay existente */
+.hero .hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  align-items: flex-end;      /* texto abajo; usa center si lo querés al medio */
+  justify-content: center;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.hero .hero-overlay h1 {
+  margin: 0 0 6rem;           /* deja espacio para el párrafo de abajo */
+  color: #fff;
+  font-size: 3rem;
+  text-shadow: 0 2px 8px rgba(0,0,0,.35);
+}
+
+/* Párrafo que está FUERA del contenedor: lo posicionamos encima igualmente */
+.hero .hero-text {
+  position: absolute;         /* clave para que no se vaya debajo */
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateX(-50%);
+  bottom: 1.5rem;
+  z-index: 3;
+  max-width: 900px;
+  padding: 0 1.25rem;
   text-align: center;
   color: #fff;
-  width: 90%;
-}
-.hero-overlay h1 {
-  font-size: 3rem;
-  font-weight: 700;
-  color: #fff;
-}
-.hero-text { padding: 2rem; text-align: center; max-width: 900px; margin: 0 auto; }
-
-/* Sections */
-section { padding: 3rem 1rem; text-align: center; }
-section p { max-width: 900px; margin: 0 auto; }
-
-/* Our Science */
-.science-section { background: #e9ebe8; padding: 3rem 1rem; }
-.science-content { display: flex; align-items: center; justify-content: space-between; max-width: 1200px; margin: 0 auto; gap: 2rem; }
-.science-text { flex: 3; text-align: left; }
-.science-image { flex: 1; }
-.science-image img { width: 100%; border-radius: 8px; object-fit: cover; }
-
-/* Team */
-.team-tabs { margin-bottom: 2rem; }
-.tab-button { background: #c4a656; color: #fff; border: none; padding: 0.7rem 1.2rem; margin: 0 0.5rem; border-radius: 8px; cursor: pointer; font-weight: 600; }
-.tab-button.active { background: #667b68; }
-.team-panel { display: none; flex-wrap: wrap; justify-content: center; gap: 2rem; }
-.team-panel.active { display: flex; }
-.member-card { background: #e9ebe8; padding: 1.5rem; border-radius: 12px; width: 220px; text-align: center; }
-.member-card img { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-bottom: 1rem; }
-.member-name { margin: 0.5rem 0; font-size: 1.2rem; font-weight: 700; color: #000; }
-.member-card span { font-size: 1rem; color: #333; }
-
-/* LinkedIn Icon */
-.linkedin-icon {
-  display: block;          /* fuerza que quede en una nueva línea */
-  margin-top: 0.5rem;      /* separa un poco del texto de rol */
 }
 
-.linkedin-icon img {
-  width: 20px;
-  height: 20px;
-  transition: transform 0.2s;
+.hero .hero-text p {
+  margin: 0;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  text-shadow: 0 1px 4px rgba(0,0,0,.35);
 }
 
-.linkedin-icon img:hover {
-  transform: scale(1.2);
-}
-
-/* Partners */
-#partners { padding: 3rem 1rem; text-align: center; }
-.partners-logos img { max-height: 65px; margin: 1rem; }
-
-/* Contact */
-#contact { background: #e9ebe8; padding: 3rem 1rem; }
-.contact-form { max-width: 600px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem; }
-.contact-form input, .contact-form select, .contact-form textarea {
-  padding: 0.8rem; border: 1px solid #ccc; border-radius: 8px; font-family: inherit; font-size: 1rem;
-}
-.contact-form button { background: #c4a656; color: #fff; border: none; padding: 0.9rem; border-radius: 8px; font-weight: 600; cursor: pointer; }
-.contact-form button:hover { background: #a68b40; }
-
-/* Responsive */
+/* ===== Responsive ===== */
 @media (max-width: 768px) {
-  h1 { font-size: 2rem; }
-  h2 { font-size: 2rem; }
-  p { font-size: 1.1rem; }
-
-  /* Mobile Navbar */
-  .nav-links { 
-    display: none; 
-    flex-direction: column; 
-    gap: 1rem; 
-    background: #fff; 
-    position: fixed; 
-    top: 70px; 
-    right: 0; 
-    left: 0; 
-    padding: 1.5rem; 
-    border-top: 1px solid #ccc; 
-    z-index: 999;
-  }
-  .nav-links.show { display: flex; }
-  .menu-toggle { display: block; }
-  .hero-overlay h1 { font-size: 1.8rem; }
-
-  .science-content { flex-direction: column; text-align: center; }
-  .science-text { text-align: center; }
-  .science-image { width: 100%; }
+  .hero .video-container { height: 70vh; min-height: 420px; }
+  .hero .hero-overlay h1 { font-size: 2rem; margin-bottom: 5rem; }
+  .hero .hero-text { bottom: 1rem; }
+  .hero .hero-text p { font-size: 1rem; }
+}
