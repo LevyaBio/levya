@@ -67,8 +67,8 @@ header {
 /* Contenedor de la imagen */
 .hero-image-wrapper {
   position: relative;
-  width: 100%;
-  height: 20vh;        /* ✅ ocupa 1/5 del alto de la pantalla en versión web */
+  width: 80%;
+  height: 60vh;        /* ✅ ocupa 1/5 del alto de la pantalla en versión web */
   min-height: 200px;   /* altura mínima para pantallas pequeñas */
   overflow: hidden;
 }
