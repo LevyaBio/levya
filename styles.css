@@ -49,6 +49,7 @@ header {
   position: relative; 
   z-index: 1001; /* clave para que quede arriba del menú */
 }
+
 /* ===== HERO (titulo sobre imagen, texto debajo) ===== */
 .hero { 
   position: relative;
@@ -56,15 +57,16 @@ header {
   text-align: center;
   color: #667b68;
   background-color: #fff;
+  z-index: 0;                 /* asegura que el hero no flote sobre todo */
 }
 
-/* Contenedor de la imagen */
 .hero-image-container {
   position: relative;
   width: 100%;
   height: 80vh;
   min-height: 480px;
   overflow: hidden;
+  z-index: 0;
 }
 
 .hero-image {
@@ -73,9 +75,10 @@ header {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  pointer-events: none;       /* la imagen no bloquea clics al hacer scroll */
 }
 
-/* Overlay con el título sobre la imagen */
+/* overlay con el título sobre la imagen */
 .hero-overlay {
   position: absolute;
   inset: 0;
@@ -84,6 +87,7 @@ header {
   justify-content: center;
   background: rgba(0, 0, 0, 0.3);
   z-index: 1;
+  pointer-events: none;       /* el overlay no intercepta clics */
 }
 
 .hero-overlay h1 {
@@ -93,6 +97,8 @@ header {
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
   margin: 0;
   padding: 0 1rem;
+  /* Si querés poder seleccionar el título, activá eventos solo en el h1 */
+  pointer-events: auto;
 }
 
 /* Texto debajo de la imagen */
@@ -109,15 +115,11 @@ header {
   margin: 0;
 }
 
-/* ===== Ajustes RESPONSIVE ===== */
+/* ===== Responsive ===== */
 @media (max-width: 768px) {
-  /* en móvil reducimos la altura y tamaño del título */
   .hero-image-container { height: 60vh; min-height: 360px; }
   .hero-overlay h1 { font-size: 2rem; padding: 0 1rem; }
-
-  .hero-text {
-    margin: 1.5rem auto 2.5rem;
-  }
+  .hero-text { margin: 1.5rem auto 2.5rem; }
   .hero-text p { font-size: 1.1rem; }
 }
 
