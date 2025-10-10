@@ -52,7 +52,7 @@ header {
 
 /* ===== NAVBAR ===== */
 .logo { 
-  height: 128px; /* 100% más grande que antes */
+  height: 128px;
 }
 
 /* ===== HERO ===== */
@@ -68,7 +68,7 @@ header {
 .hero-image-wrapper {
   position: relative;
   width: 100%;
-  height: 30vh;        /* ✅ ocupa 1/5 del alto de la pantalla en versión web */
+  height: 20vh;        /* ✅ ocupa 1/5 del alto de la pantalla en versión web */
   min-height: 200px;   /* altura mínima para pantallas pequeñas */
   overflow: hidden;
 }
